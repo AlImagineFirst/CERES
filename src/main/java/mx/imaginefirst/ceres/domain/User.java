@@ -5,17 +5,17 @@
  */
 package mx.imaginefirst.ceres.domain;
 
-import java.sql.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import mx.imaginefirst.ceres.domain.catalog.Rol;
 import mx.imaginefirst.ceres.entity.UserEntity;
 import mx.imaginefirst.ceres.interfaces.IModel;
 
@@ -28,34 +28,28 @@ public class User extends BaseObject implements IModel {
 	private Long id;
 
 	@Column(nullable = false)
-	private String name;
+	private String nombre;
 
 	@Column(nullable = false)
-	private String lastName;
+	private String apellido_paterno;
+
+	@Column(nullable = true)
+	private String apellido_materno;
 
 	@Column(nullable = false)
-	private String nickname;
+	private String correo;
 
-	@Column(nullable = false)
-	private String email;
-
-	@Column(nullable = false)
-	private String phone;
+	@Column(nullable = true)
+	private String telefono;
 	
-	@Column (nullable = false)
-	private String location;
-
-	@Column(nullable = false)
-	private Date birthday;
-	
-	@Column(nullable = false)
-	private String gender;
-
 	@Column(nullable = false)
 	private String password;
 
-	@Column(nullable = false)
-	private String image;
+	@Column(nullable = true)
+	private String fotografia;
+	
+	@OneToOne
+	private Rol rol;
 	
 	@Override
 	public Object toEntity() {
@@ -66,172 +60,79 @@ public class User extends BaseObject implements IModel {
 	}
 	
 	public void initBasicUser() {
-		this.setPhone("");
-		this.setLocation("");
-		this.setImage("");
-		this.setGender("");
+		this.setTelefono("");
+		this.setFotografia("../avatar/001.png");
 	}
 
-	/**
-	 * @return the id
-	 */
 	public Long getId() {
 		return id;
 	}
 
-	/**
-	 * @param id
-	 *            the id to set
-	 */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-	/**
-	 * @return the name
-	 */
-	public String getName() {
-		return name;
+	public String getNombre() {
+		return nombre;
 	}
 
-	/**
-	 * @param name
-	 *            the name to set
-	 */
-	public void setName(String name) {
-		this.name = name;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
-	/**
-	 * @return the lastName
-	 */
-	public String getLastName() {
-		return lastName;
+	public String getApellido_paterno() {
+		return apellido_paterno;
 	}
 
-	/**
-	 * @param lastName
-	 *            the lastName to set
-	 */
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
+	public void setApellido_paterno(String apellido_paterno) {
+		this.apellido_paterno = apellido_paterno;
 	}
 
-	/**
-	 * @return the nickname
-	 */
-	public String getNickname() {
-		return nickname;
+	public String getApellido_materno() {
+		return apellido_materno;
 	}
 
-	/**
-	 * @param nickname
-	 *            the nickname to set
-	 */
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setApellido_materno(String apellido_materno) {
+		this.apellido_materno = apellido_materno;
 	}
 
-	/**
-	 * @return the email
-	 */
-	public String getEmail() {
-		return email;
+	public String getCorreo() {
+		return correo;
 	}
 
-	/**
-	 * @param email
-	 *            the email to set
-	 */
-	public void setEmail(String email) {
-		this.email = email;
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
 
-	/**
-	 * @return the phone
-	 */
-	public String getPhone() {
-		return phone;
+	public String getTelefono() {
+		return telefono;
 	}
 
-	/**
-	 * @param phone
-	 *            the phone to set
-	 */
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 
-	/**
-	 * @return the password
-	 */
 	public String getPassword() {
 		return password;
 	}
 
-	/**
-	 * @param password
-	 *            the password to set
-	 */
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	
-	/**
-	 * @return the country
-	 */
-	public String getLocation() {
-		return location;
+
+	public String getFotografia() {
+		return fotografia;
 	}
 
-	/**
-	 * @param country the country to set
-	 */
-	public void setLocation(String location) {
-		this.location = location;
+	public void setFotografia(String fotografia) {
+		this.fotografia = fotografia;
 	}
 
-	/**
-	 * @return the birthday
-	 */
-	public Date getBirthday() {
-		return birthday;
+	public Rol getRol() {
+		return rol;
 	}
 
-	/**
-	 * @param birthday
-	 *            the birthday to set
-	 */
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
-
-	/**
-	 * @return the gender
-	 */
-	public String getGender() {
-		return gender;
-	}
-
-	/**
-	 * @param gender the gender to set
-	 */
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	/**
-	 * @return the image
-	 */
-	public String getImage() {
-		return image;
-	}
-
-	/**
-	 * @param image
-	 *            the image to set
-	 */
-	public void setImage(String image) {
-		this.image = image;
+	public void setRol(Rol rol) {
+		this.rol = rol;
 	}
 }
