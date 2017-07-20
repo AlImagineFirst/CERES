@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
-import mx.imaginefirst.ceres.domain.User;
+import mx.imaginefirst.ceres.domain.Usuario;
 import mx.imaginefirst.ceres.entity.UserEntity;
 import mx.imaginefirst.ceres.exception.EventsErrorCode;
 import mx.imaginefirst.ceres.services.UserService;
@@ -46,7 +46,7 @@ public class UserController {
 		HttpHeaders responseHeaders = new HttpHeaders();
 		
 		//Search the user by email
-		List<User> users = userService.findAllByEmailAndPassword(login, password);
+		List<Usuario> users = userService.findAllByEmailAndPassword(login, password);
 		
 		if(users.isEmpty()) {
 			//Search the user by nickname
@@ -81,7 +81,7 @@ public class UserController {
 			return new ResponseEntity<UserEntity>(null, responseHeaders, HttpStatus.NOT_FOUND);
 		}
 
-		User user = (User) entity.toModel();
+		Usuario user = (Usuario) entity.toModel();
 		//Filling default data.
 		user.initBasicUser();
 		

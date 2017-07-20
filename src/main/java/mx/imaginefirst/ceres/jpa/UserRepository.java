@@ -9,15 +9,15 @@ import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import mx.imaginefirst.ceres.domain.User;
+import mx.imaginefirst.ceres.domain.Usuario;
 
-public interface UserRepository extends JpaRepository<User, Long> {
+public interface UserRepository extends JpaRepository<Usuario, Long> {
 
-	public User findByEmail(String email);
+	public Usuario findByEmail(String email);
 
-	public User findByNickname(String nickname);
+	public Usuario findByNickname(String nickname);
 	
-	public List<User> findAllByEmailAndPassword(String email, String password);
+	public List<Usuario> findAllByEmailAndPassword(String email, String password);
 	
-	public List<User> findAllByNicknameAndPassword(String nickname, String password);
+	public List<Usuario> findAllByNicknameAndPassword(String nickname, String password);
 }

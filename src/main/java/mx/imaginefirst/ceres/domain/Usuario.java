@@ -22,7 +22,7 @@ import mx.imaginefirst.ceres.interfaces.IModel;
 @JsonIgnoreProperties(ignoreUnknown=true)
 @SuppressWarnings("serial")
 @Entity
-public class User extends BaseObject implements IModel {
+public class Usuario extends BaseObject implements IModel {
 	@Id
 	@GeneratedValue
 	private Long id;

@@ -14,7 +14,7 @@ import javax.persistence.PersistenceContextType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import mx.imaginefirst.ceres.domain.User;
+import mx.imaginefirst.ceres.domain.Usuario;
 import mx.imaginefirst.ceres.jpa.UserRepository;
 
 @Service
@@ -32,8 +32,8 @@ public class UserService {
 	 * @param email
 	 * @return
 	 */
-	public User findByEmail(String email) {
-		User user = userRepository.findByEmail(email);
+	public Usuario findByEmail(String email) {
+		Usuario user = userRepository.findByEmail(email);
 		return user;
 	}
 	
@@ -43,8 +43,8 @@ public class UserService {
 	 * @param nickname
 	 * @return
 	 */
-	public User findByNickname(String nickname) {
-		User user = userRepository.findByNickname(nickname);
+	public Usuario findByNickname(String nickname) {
+		Usuario user = userRepository.findByNickname(nickname);
 		return user;
 	}
 	
@@ -54,8 +54,8 @@ public class UserService {
 	 * @param email
 	 * @return
 	 */
-	public List<User> findAllByEmailAndPassword(String email, String password) {
-		List<User> users = userRepository.findAllByEmailAndPassword(email, password);
+	public List<Usuario> findAllByEmailAndPassword(String email, String password) {
+		List<Usuario> users = userRepository.findAllByEmailAndPassword(email, password);
 		return users;
 	}
 
@@ -65,8 +65,8 @@ public class UserService {
 	 * @param nickname
 	 * @return
 	 */
-	public List<User> findByNicknameAndPassword(String nickname, String password) {
-		List<User> users = userRepository.findAllByNicknameAndPassword(nickname, password);
+	public List<Usuario> findByNicknameAndPassword(String nickname, String password) {
+		List<Usuario> users = userRepository.findAllByNicknameAndPassword(nickname, password);
 		return users;
 	}
 	
@@ -76,8 +76,8 @@ public class UserService {
 	 * @param id
 	 * @return
 	 */
-	public User findUserDetached(long id) {
-		User user = userRepository.findOne(id);
+	public Usuario findUserDetached(long id) {
+		Usuario user = userRepository.findOne(id);
 		entityManager.detach(user);
 		return user;
 	}
@@ -100,8 +100,8 @@ public class UserService {
 	 * 
 	 * @return Saved user
 	 */
-	public User save(User user) {
-		User savedUser = userRepository.save(user);
+	public Usuario save(Usuario user) {
+		Usuario savedUser = userRepository.save(user);
 		return savedUser;
 	}
 }

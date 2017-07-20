@@ -3,44 +3,36 @@
  *   Copyright 2017 Imagine First.
  * *******************************************************************************
  */
-package mx.imaginefirst.ceres.domain.catalog;
+package mx.imaginefirst.ceres.domain.permisos;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mx.imaginefirst.ceres.domain.BaseObject;
-import mx.imaginefirst.ceres.domain.permisos.Pagina;
 import mx.imaginefirst.ceres.entity.UserEntity;
 import mx.imaginefirst.ceres.interfaces.IModel;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
 @SuppressWarnings("serial")
 @Entity
-public class Rol extends BaseObject implements IModel {
+public class Accion extends BaseObject implements IModel {
 	@Id
 	@GeneratedValue
 	private Long id;
 
 	@Column(nullable = false)
 	private String nombre;
+	
+	@ManyToOne
+	private Seccion seccion;
 
-	@Column(nullable = false)
-	private String descripcion;
-	
-	@OneToMany(cascade=CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "rol")
-	private Set<Pagina> paginas;
-	
 	@Override
 	public Object toEntity() {
 		ObjectMapper mapper = new ObjectMapper();
@@ -65,19 +57,13 @@ public class Rol extends BaseObject implements IModel {
 		this.nombre = nombre;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public Seccion getSeccion() {
+		return seccion;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setSeccion(Seccion seccion) {
+		this.seccion = seccion;
 	}
 
-	public Set<Pagina> getPaginas() {
-		return paginas;
-	}
-
-	public void setPaginas(Set<Pagina> paginas) {
-		this.paginas = paginas;
-	}
+	
 }
