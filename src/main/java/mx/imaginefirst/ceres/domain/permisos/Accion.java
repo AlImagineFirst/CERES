@@ -63,7 +63,5 @@ public class Accion extends BaseObject implements IModel {
 
 	public void setSeccion(Seccion seccion) {
 		this.seccion = seccion;
-	}
-
-	
+	}	
 }

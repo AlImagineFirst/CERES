@@ -38,8 +38,8 @@ public class Rol extends BaseObject implements IModel {
 	@Column(nullable = false)
 	private String descripcion;
 	
-	@OneToMany(cascade=CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "rol")
-	private Set<Pagina> paginas;
+//	@OneToMany(cascade=CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "rol")
+//	private Set<Pagina> paginas;
 	
 	@Override
 	public Object toEntity() {
@@ -73,11 +73,11 @@ public class Rol extends BaseObject implements IModel {
 		this.descripcion = descripcion;
 	}
 
-	public Set<Pagina> getPaginas() {
-		return paginas;
-	}
-
-	public void setPaginas(Set<Pagina> paginas) {
-		this.paginas = paginas;
-	}
+//	public Set<Pagina> getPaginas() {
+//		return paginas;
+//	}
+//
+//	public void setPaginas(Set<Pagina> paginas) {
+//		this.paginas = paginas;
+//	}
 }
