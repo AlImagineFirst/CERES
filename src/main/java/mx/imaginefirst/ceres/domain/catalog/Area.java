@@ -3,17 +3,12 @@
  *   Copyright 2017 Imagine First.
  * *******************************************************************************
  */
-package mx.imaginefirst.ceres.domain.permisos;
+package mx.imaginefirst.ceres.domain.catalog;
 
-import java.util.Set;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -26,7 +21,7 @@ import mx.imaginefirst.ceres.interfaces.IModel;
 @JsonIgnoreProperties(ignoreUnknown=true)
 @SuppressWarnings("serial")
 @Entity
-public class Rol extends BaseObject implements IModel {
+public class Area extends BaseObject implements IModel {
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -36,9 +31,6 @@ public class Rol extends BaseObject implements IModel {
 
 	@Column(nullable = false)
 	private String descripcion;
-	
-//	@OneToMany(cascade=CascadeType.PERSIST, fetch = FetchType.LAZY, mappedBy = "rol")
-//	private Set<Pagina> paginas;
 	
 	@Override
 	public Object toEntity() {
@@ -71,12 +63,4 @@ public class Rol extends BaseObject implements IModel {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
-
-//	public Set<Pagina> getPaginas() {
-//		return paginas;
-//	}
-//
-//	public void setPaginas(Set<Pagina> paginas) {
-//		this.paginas = paginas;
-//	}
 }

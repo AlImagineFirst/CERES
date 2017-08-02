@@ -13,26 +13,19 @@ import mx.imaginefirst.ceres.interfaces.IEntity;
 public class UserEntity implements IEntity {
 
 	private Long id;
-
 	private String nombre;
-
 	private String apellido_paterno;
-
 	private String apellido_materno;
-
 	private String correo;
-
 	private String telefono;
-
 	private String password;
-
 	private String fotografia;
 
 	@Override
 	public Object toModel() {
 		ObjectMapper mapper = new ObjectMapper();
-		Usuario usuario = mapper.convertValue(this, Usuario.class);
-		return usuario;
+		Usuario model = mapper.convertValue(this, Usuario.class);
+		return model;
 	}
 
 	public Long getId() {

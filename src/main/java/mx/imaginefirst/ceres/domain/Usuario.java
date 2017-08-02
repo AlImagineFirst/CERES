@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.catalog.Rol;
+import mx.imaginefirst.ceres.domain.permisos.Rol;
 import mx.imaginefirst.ceres.entity.UserEntity;
 import mx.imaginefirst.ceres.interfaces.IModel;
 

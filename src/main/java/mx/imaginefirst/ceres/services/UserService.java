@@ -19,7 +19,7 @@ import javax.persistence.criteria.Path;
 import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 
-
+import org.hibernate.annotations.Where;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -42,28 +42,28 @@ public class UserService {
 	    CriteriaQuery<Usuario> criteriaQuery = criteriaBuilder.createQuery(Usuario.class);
 	    Root<Usuario> user = criteriaQuery.from(Usuario.class);
 
-	    Path<String> namePath = user.get("name");
-	    Path<String> userTypeClassTypeDisplayName = 
-	                     user.get("userType").get("classType").get("displayName");
-	    Path<String> userTypeModel = user.get("userType").get("model");
-	    List<Predicate> predicates = new ArrayList<>();
-	    for(String word : words) {
-	        Expression<String> wordLiteral = criteriaBuilder.literal(word);
-	        predicates.add(
-	                criteriaBuilder.or(
-	                    criteriaBuilder.like(criteriaBuilder.lower(namePath), criteriaBuilder.lower(wordLiteral)),
-	                    criteriaBuilder.like(criteriaBuilder.lower(userTypeClassTypeDisplayName),
-	                            criteriaBuilder.lower(wordLiteral)),
-	                    criteriaBuilder.like(criteriaBuilder.lower(userTypeModel), criteriaBuilder.lower(wordLiteral))
-	                )
-	        );
+	    Predicate where = criteriaBuilder.conjunction();
+	    
+	    for(CustomCriteria criteria : criterias) {
+	    	where = criteriaBuilder.and(where, 
+	    			criteriaBuilder.equal(user.get(criteria.getField()), criteria.getValue()));
+	    	
+	        //Expression<String> wordLiteral = criteriaBuilder.literal(word);
+	    	
+	    	
+	    	
+	        
 	    }
-	    criteriaQuery.select(doc).where(
-	            criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]))
-	    );
+//	    criteriaQuery.select(doc).where(
+//	            criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]))
+//	    );
 
 	    return entityManager.createQuery(criteriaQuery).getResultList();
 	}
+	
+
+
+	
 //	
 //	/**
 //	 * Find User by email

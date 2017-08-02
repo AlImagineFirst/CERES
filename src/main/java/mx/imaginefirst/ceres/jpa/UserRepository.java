@@ -13,6 +13,4 @@ import mx.imaginefirst.ceres.domain.Usuario;
 
 public interface UserRepository extends JpaRepository<Usuario, Long> {
 
-	
-
 }
