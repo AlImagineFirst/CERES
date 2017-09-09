@@ -3,7 +3,7 @@
  *   Copyright 2017 Imagine First.
  * *******************************************************************************
  */
-package mx.imaginefirst.ceres.domain.catalog;
+package mx.imaginefirst.ceres.domain.catalogo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +21,7 @@ import mx.imaginefirst.ceres.interfaces.IModel;
 @JsonIgnoreProperties(ignoreUnknown=true)
 @SuppressWarnings("serial")
 @Entity
-public class EstadoExpediente extends BaseObject implements IModel {
+public class Sector extends BaseObject implements IModel {
 	@Id
 	@GeneratedValue
 	private Long id;

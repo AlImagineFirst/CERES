@@ -1,16 +1,9 @@
-/*
- * *******************************************************************************
- *   Copyright 2017 Imagine First.
- * *******************************************************************************
- */
-package mx.imaginefirst.ceres.domain.catalog;
+package mx.imaginefirst.ceres.domain.encuestas;
 
 import javax.persistence.Column;
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -18,19 +11,20 @@ import mx.imaginefirst.ceres.domain.BaseObject;
 import mx.imaginefirst.ceres.entity.UserEntity;
 import mx.imaginefirst.ceres.interfaces.IModel;
 
-@JsonIgnoreProperties(ignoreUnknown=true)
-@SuppressWarnings("serial")
-@Entity
-public class Actividad extends BaseObject implements IModel {
+public class Plantilla extends BaseObject implements IModel {
+
 	@Id
 	@GeneratedValue
 	private Long id;
-
+	
 	@Column(nullable = false)
 	private String nombre;
-
+	
 	@Column(nullable = false)
-	private String descripcion;
+	private String objetivo;
+	
+	@Column(nullable = false)
+	private int numeroEjercicios;
 	
 	@Override
 	public Object toEntity() {
@@ -56,11 +50,19 @@ public class Actividad extends BaseObject implements IModel {
 		this.nombre = nombre;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public String getObjetivo() {
+		return objetivo;
 	}
 
-	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+	public void setObjetivo(String objetivo) {
+		this.objetivo = objetivo;
+	}
+
+	public int getNumeroEjercicios() {
+		return numeroEjercicios;
+	}
+
+	public void setNumeroEjercicios(int numeroEjercicios) {
+		this.numeroEjercicios = numeroEjercicios;
 	}
 }

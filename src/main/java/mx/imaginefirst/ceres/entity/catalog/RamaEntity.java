@@ -7,7 +7,7 @@ package mx.imaginefirst.ceres.entity.catalog;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.catalog.Rama;
+import mx.imaginefirst.ceres.domain.catalogo.Rama;
 import mx.imaginefirst.ceres.interfaces.IEntity;
 
 public class RamaEntity implements IEntity {

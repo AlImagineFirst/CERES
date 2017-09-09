@@ -7,7 +7,7 @@ package mx.imaginefirst.ceres.entity.catalog;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.catalog.EstadoEstudiante;
+import mx.imaginefirst.ceres.domain.catalogo.EstadoEstudiante;
 import mx.imaginefirst.ceres.interfaces.IEntity;
 
 public class EstadoEstudianteEntity implements IEntity {

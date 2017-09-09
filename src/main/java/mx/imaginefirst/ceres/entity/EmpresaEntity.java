@@ -8,15 +8,15 @@ package mx.imaginefirst.ceres.entity;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mx.imaginefirst.ceres.domain.Empresa;
-import mx.imaginefirst.ceres.domain.catalog.Actividad;
-import mx.imaginefirst.ceres.domain.catalog.Estado;
-import mx.imaginefirst.ceres.domain.catalog.Giro;
-import mx.imaginefirst.ceres.domain.catalog.Municipio;
-import mx.imaginefirst.ceres.domain.catalog.Rama;
-import mx.imaginefirst.ceres.domain.catalog.Regimen;
-import mx.imaginefirst.ceres.domain.catalog.Sector;
-import mx.imaginefirst.ceres.domain.catalog.Tamano;
-import mx.imaginefirst.ceres.domain.catalog.Tipo;
+import mx.imaginefirst.ceres.entity.catalog.ActividadEntity;
+import mx.imaginefirst.ceres.entity.catalog.EstadoEntity;
+import mx.imaginefirst.ceres.entity.catalog.GiroEntity;
+import mx.imaginefirst.ceres.entity.catalog.MunicipioEntity;
+import mx.imaginefirst.ceres.entity.catalog.RamaEntity;
+import mx.imaginefirst.ceres.entity.catalog.RegimenEntity;
+import mx.imaginefirst.ceres.entity.catalog.SectorEntity;
+import mx.imaginefirst.ceres.entity.catalog.TamanoEntity;
+import mx.imaginefirst.ceres.entity.catalog.TipoEntity;
 import mx.imaginefirst.ceres.interfaces.IEntity;
 
 public class EmpresaEntity implements IEntity {
@@ -102,75 +102,75 @@ public class EmpresaEntity implements IEntity {
 		this.codigo_postal = codigo_postal;
 	}
 
-	public Estado getEstado() {
+	public EstadoEntity getEstado() {
 		return estado;
 	}
 
-	public void setEstado(Estado estado) {
+	public void setEstado(EstadoEntity estado) {
 		this.estado = estado;
 	}
 
-	public Municipio getMunicipio() {
+	public MunicipioEntity getMunicipio() {
 		return municipio;
 	}
 
-	public void setMunicipio(Municipio municipio) {
+	public void setMunicipio(MunicipioEntity municipio) {
 		this.municipio = municipio;
 	}
 
-	public Tamano getTamano() {
+	public TamanoEntity getTamano() {
 		return tamano;
 	}
 
-	public void setTamano(Tamano tamano) {
+	public void setTamano(TamanoEntity tamano) {
 		this.tamano = tamano;
 	}
 
-	public Tipo getTipo() {
+	public TipoEntity getTipo() {
 		return tipo;
 	}
 
-	public void setTipo(Tipo tipo) {
+	public void setTipo(TipoEntity tipo) {
 		this.tipo = tipo;
 	}
 
-	public Giro getGiro() {
+	public GiroEntity getGiro() {
 		return giro;
 	}
 
-	public void setGiro(Giro giro) {
+	public void setGiro(GiroEntity giro) {
 		this.giro = giro;
 	}
 
-	public Sector getSector() {
+	public SectorEntity getSector() {
 		return sector;
 	}
 
-	public void setSector(Sector sector) {
+	public void setSector(SectorEntity sector) {
 		this.sector = sector;
 	}
 
-	public Rama getRama() {
+	public RamaEntity getRama() {
 		return rama;
 	}
 
-	public void setRama(Rama rama) {
+	public void setRama(RamaEntity rama) {
 		this.rama = rama;
 	}
 
-	public Regimen getRegimen() {
+	public RegimenEntity getRegimen() {
 		return regimen;
 	}
 
-	public void setRegimen(Regimen regimen) {
+	public void setRegimen(RegimenEntity regimen) {
 		this.regimen = regimen;
 	}
 
-	public Actividad getActividad() {
+	public ActividadEntity getActividad() {
 		return actividad;
 	}
 
-	public void setActividad(Actividad actividad) {
+	public void setActividad(ActividadEntity actividad) {
 		this.actividad = actividad;
 	}
 

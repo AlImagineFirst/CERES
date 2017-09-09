@@ -3,12 +3,13 @@
  *   Copyright 2017 Imagine First.
  * *******************************************************************************
  */
-package mx.imaginefirst.ceres.domain.catalog;
+package mx.imaginefirst.ceres.domain.catalogo;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.DeserializationFeature;
@@ -21,7 +22,7 @@ import mx.imaginefirst.ceres.interfaces.IModel;
 @JsonIgnoreProperties(ignoreUnknown=true)
 @SuppressWarnings("serial")
 @Entity
-public class Tipo extends BaseObject implements IModel {
+public class Municipio extends BaseObject implements IModel {
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -31,6 +32,9 @@ public class Tipo extends BaseObject implements IModel {
 
 	@Column(nullable = false)
 	private String descripcion;
+	
+	@ManyToOne
+	private Estado estado;
 	
 	@Override
 	public Object toEntity() {

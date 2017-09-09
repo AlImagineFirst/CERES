@@ -7,7 +7,7 @@ package mx.imaginefirst.ceres.entity.catalog;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.catalog.Regimen;
+import mx.imaginefirst.ceres.domain.catalogo.Regimen;
 import mx.imaginefirst.ceres.interfaces.IEntity;
 
 public class SectorEntity implements IEntity {

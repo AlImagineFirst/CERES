@@ -7,7 +7,7 @@ package mx.imaginefirst.ceres.entity.catalog;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.catalog.Area;
+import mx.imaginefirst.ceres.domain.catalogo.Area;
 import mx.imaginefirst.ceres.interfaces.IEntity;
 
 public class AreaEntity implements IEntity {

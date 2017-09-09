@@ -7,7 +7,7 @@ package mx.imaginefirst.ceres.entity.catalog;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.catalog.Sexo;
+import mx.imaginefirst.ceres.domain.catalogo.Sexo;
 import mx.imaginefirst.ceres.interfaces.IEntity;
 
 public class TipoEntity implements IEntity {

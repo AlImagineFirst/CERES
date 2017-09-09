@@ -15,15 +15,15 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.catalog.Actividad;
-import mx.imaginefirst.ceres.domain.catalog.Estado;
-import mx.imaginefirst.ceres.domain.catalog.Giro;
-import mx.imaginefirst.ceres.domain.catalog.Municipio;
-import mx.imaginefirst.ceres.domain.catalog.Rama;
-import mx.imaginefirst.ceres.domain.catalog.Regimen;
-import mx.imaginefirst.ceres.domain.catalog.Sector;
-import mx.imaginefirst.ceres.domain.catalog.Tamano;
-import mx.imaginefirst.ceres.domain.catalog.Tipo;
+import mx.imaginefirst.ceres.domain.catalogo.Actividad;
+import mx.imaginefirst.ceres.domain.catalogo.Estado;
+import mx.imaginefirst.ceres.domain.catalogo.Giro;
+import mx.imaginefirst.ceres.domain.catalogo.Municipio;
+import mx.imaginefirst.ceres.domain.catalogo.Rama;
+import mx.imaginefirst.ceres.domain.catalogo.Regimen;
+import mx.imaginefirst.ceres.domain.catalogo.Sector;
+import mx.imaginefirst.ceres.domain.catalogo.Tamano;
+import mx.imaginefirst.ceres.domain.catalogo.Tipo;
 import mx.imaginefirst.ceres.entity.UserEntity;
 import mx.imaginefirst.ceres.interfaces.IModel;
 

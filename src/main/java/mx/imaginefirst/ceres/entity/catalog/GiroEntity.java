@@ -7,7 +7,7 @@ package mx.imaginefirst.ceres.entity.catalog;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.catalog.Giro;
+import mx.imaginefirst.ceres.domain.catalogo.Giro;
 import mx.imaginefirst.ceres.interfaces.IEntity;
 
 public class GiroEntity implements IEntity {

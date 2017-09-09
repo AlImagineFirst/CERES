@@ -9,7 +9,7 @@ import java.util.Set;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.catalog.Estado;
+import mx.imaginefirst.ceres.domain.catalogo.Estado;
 import mx.imaginefirst.ceres.interfaces.IEntity;
 
 public class EstadoEntity implements IEntity {
