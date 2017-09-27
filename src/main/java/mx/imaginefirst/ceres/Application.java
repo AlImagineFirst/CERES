@@ -26,6 +26,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.mangofactory.swagger.plugin.EnableSwagger;
 
+import mx.imaginefirst.ceres.controller.CatalogosInit;
+
 /**
  * Main Spring boot configuration file. Starts up a Spring boot application.
  */
@@ -55,6 +57,8 @@ public class Application {
             }
         });
         ApplicationContext ctx = app.run(args);
+        CatalogosInit initCatalogos = new CatalogosInit();
+        
 		log.info("-----------------------------------------------------------------");
 		log.info("Active profiles:");
 		Arrays.asList(ctx.getEnvironment().getActiveProfiles()).forEach(log::info);

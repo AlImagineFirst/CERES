@@ -7,10 +7,10 @@ package mx.imaginefirst.ceres.entity;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import mx.imaginefirst.ceres.domain.Usuario;
+import mx.imaginefirst.ceres.domain.usuario.Usuario;
 import mx.imaginefirst.ceres.interfaces.IEntity;
 
-public class UserEntity implements IEntity {
+public class UsuarioEntity implements IEntity {
 
 	private Long id;
 	private String nombre;

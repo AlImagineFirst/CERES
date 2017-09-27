@@ -3,7 +3,7 @@
  *   Copyright 2015 Imagine First.
  * *******************************************************************************
  */
-package mx.imaginefirst.ceres.services;
+package mx.imaginefirst.ceres.services.usuario;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,8 +24,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import mx.imaginefirst.ceres.domain.CustomCriteria;
-import mx.imaginefirst.ceres.domain.Usuario;
-import mx.imaginefirst.ceres.jpa.UserRepository;
+import mx.imaginefirst.ceres.domain.usuario.Usuario;
+import mx.imaginefirst.ceres.jpa.usuario.UserRepository;
 
 @Service
 public class UserService {
@@ -36,56 +36,6 @@ public class UserService {
 	@PersistenceContext(type = PersistenceContextType.TRANSACTION)
 	private EntityManager entityManager;
 	
-	
-	public List<Usuario> findByCustomFilter(Set<CustomCriteria> criterias) {
-		CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-	    CriteriaQuery<Usuario> criteriaQuery = criteriaBuilder.createQuery(Usuario.class);
-	    Root<Usuario> user = criteriaQuery.from(Usuario.class);
-
-	    Predicate where = criteriaBuilder.conjunction();
-	    
-	    for(CustomCriteria criteria : criterias) {
-	    	where = criteriaBuilder.and(where, 
-	    			criteriaBuilder.equal(user.get(criteria.getField()), criteria.getValue()));
-	    	
-	        //Expression<String> wordLiteral = criteriaBuilder.literal(word);
-	    	
-	    	
-	    	
-	        
-	    }
-//	    criteriaQuery.select(doc).where(
-//	            criteriaBuilder.and(predicates.toArray(new Predicate[predicates.size()]))
-//	    );
-
-	    return entityManager.createQuery(criteriaQuery).getResultList();
-	}
-	
-
-
-	
-//	
-//	/**
-//	 * Find User by email
-//	 * 
-//	 * @param email
-//	 * @return
-//	 */
-//	public Usuario findByEmail(String email) {
-//		Usuario user = userRepository.findByEmail(email);
-//		return user;
-//	}
-//	
-//	/**
-//	 * Find User by nickname
-//	 * 
-//	 * @param nickname
-//	 * @return
-//	 */
-//	public Usuario findByNickname(String nickname) {
-//		Usuario user = userRepository.findByNickname(nickname);
-//		return user;
-//	}
 //	
 //	/**
 //	 * Find User by email and password

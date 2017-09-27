@@ -25,7 +25,7 @@ import mx.imaginefirst.ceres.domain.catalogo.EstadoEstudiante;
 import mx.imaginefirst.ceres.domain.catalogo.EstadoExpediente;
 import mx.imaginefirst.ceres.domain.catalogo.Municipio;
 import mx.imaginefirst.ceres.domain.catalogo.Sexo;
-import mx.imaginefirst.ceres.entity.UserEntity;
+import mx.imaginefirst.ceres.entity.UsuarioEntity;
 import mx.imaginefirst.ceres.interfaces.IModel;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
@@ -107,7 +107,7 @@ public class Estudiante extends BaseObject implements IModel {
 	public Object toEntity() {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		UserEntity entity = mapper.convertValue(this, UserEntity.class);
+		UsuarioEntity entity = mapper.convertValue(this, UsuarioEntity.class);
 		return entity;
 	}
 

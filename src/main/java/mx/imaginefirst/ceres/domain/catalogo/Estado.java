@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mx.imaginefirst.ceres.domain.BaseObject;
-import mx.imaginefirst.ceres.entity.UserEntity;
+import mx.imaginefirst.ceres.entity.UsuarioEntity;
 import mx.imaginefirst.ceres.interfaces.IModel;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
@@ -44,7 +44,7 @@ public class Estado extends BaseObject implements IModel {
 	public Object toEntity() {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		UserEntity entity = mapper.convertValue(this, UserEntity.class);
+		UsuarioEntity entity = mapper.convertValue(this, UsuarioEntity.class);
 		return entity;
 	}
 

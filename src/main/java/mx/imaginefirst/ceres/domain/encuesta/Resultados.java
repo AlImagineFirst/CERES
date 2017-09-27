@@ -1,4 +1,4 @@
-package mx.imaginefirst.ceres.domain.encuestas;
+package mx.imaginefirst.ceres.domain.encuesta;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -8,7 +8,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import mx.imaginefirst.ceres.domain.BaseObject;
-import mx.imaginefirst.ceres.entity.UserEntity;
+import mx.imaginefirst.ceres.entity.UsuarioEntity;
 import mx.imaginefirst.ceres.interfaces.IModel;
 
 public class Resultados extends BaseObject implements IModel {
@@ -30,7 +30,7 @@ public class Resultados extends BaseObject implements IModel {
 	public Object toEntity() {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		UserEntity entity = mapper.convertValue(this, UserEntity.class);
+		UsuarioEntity entity = mapper.convertValue(this, UsuarioEntity.class);
 		return entity;
 	}
 

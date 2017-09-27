@@ -24,7 +24,7 @@ import mx.imaginefirst.ceres.domain.catalogo.Regimen;
 import mx.imaginefirst.ceres.domain.catalogo.Sector;
 import mx.imaginefirst.ceres.domain.catalogo.Tamano;
 import mx.imaginefirst.ceres.domain.catalogo.Tipo;
-import mx.imaginefirst.ceres.entity.UserEntity;
+import mx.imaginefirst.ceres.entity.UsuarioEntity;
 import mx.imaginefirst.ceres.interfaces.IModel;
 
 @JsonIgnoreProperties(ignoreUnknown=true)
@@ -87,7 +87,7 @@ public class Empresa extends BaseObject implements IModel {
 	public Object toEntity() {
 		ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-		UserEntity entity = mapper.convertValue(this, UserEntity.class);
+		UsuarioEntity entity = mapper.convertValue(this, UsuarioEntity.class);
 		return entity;
 	}
 
